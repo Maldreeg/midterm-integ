@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contacts</title>
+    <style>
+        .container{
+            margin: 0;
+            font-family: monospace;
+            
+        }
+        .navwrap{
+            background-color: rgb(242, 255, 251);
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-gap: 5px;
+        }
+        header{
+            grid-column: 1/13;
+            background-image: url("Image/bg.jpg");
+            background-size: cover;
+        }
+        .logo{
+            position: fixed;
+            margin: 16px 36px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: #520d72;
+        }
+        nav button{
+            display: none;
+        }
+        .mblbtns{
+            display: none;
+        }
+        .nav-scroll {
+            background-color: #333;
+        }
+        nav ul{
+            list-style: none;
+            overflow: hidden;
+            padding-right: 10px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        nav ul li{
+            display: flex;
+            height: 50px;
+            padding-left: 5px;
+            margin: 0;
+            align-items: center;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 15px 16px;
+            font-weight: bold;
+            color: white;
+            
+        }
+        nav ul li a:hover{
+            background-color: rgb(224, 156, 245);;
+            border-bottom: 3px solid #FBBE04;
+            
+            
+        }
+        .banner{
+            padding-top: 50px;
+            height: 200px;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+        }
+        .banner p{
+            text-align: center;
+            width: 100%;
+            color: rgb(255, 248, 248);
+        }
+        #infos  {
+            padding: 20px 30px;
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bigtext{
+                font-size: 80px;
+                font-weight: bold;
+        }
+        .textbox{
+            font-size: 20px;
+            text-align: center;
+            margin-inline: 40px;
+        }
+        .textbox img{
+            width: 50px;
+        }
+        .titletext{
+            grid-column: 1/13;
+            display: flex;
+            padding-left: 90px;
+            font-size: 28px;
+        }
+        .content{
+            grid-column: 2/12;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            color: black;
+        }
+        .inputcontainers{
+            grid-column: 1/4;
+            background-image: url("Image/purple\ and\ orange\ bg.png");
+            background-size: cover;
+            border-radius: 12px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 20px;
+        }
+        .inputcontainers p{
+            font-size: 14px;
+        }
+        .inputcontainers input{
+            margin-bottom: 20px;
+        }
+        .inputbtn{
+            padding: 10;
+            display: flex;
+            justify-content: center;
+        }
+        .inputbtn a{
+            background-color: dodgerblue;
+            padding: 10px 20px;
+            align-self: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 12px;
+        }
+        .textcontainers{
+            grid-column: 4/7;
+            padding-left: 50px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .footer{
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #520d72;
+            color: white;
+        }
+        @media screen and (max-width: 600px){
+            .btncontainers{
+                display: flex;
+                flex-direction: column;
+            }
+            nav ul{
+                display: none;
+            }
+            nav button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                padding: 10px 15px;
+                align-self: flex-end;
+                margin-right: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .mblbtns{
+                display: none;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                font-family: monospace;
+            }
+            .btncontainers:hover .mblbtns{
+                display: block;
+            }
+            .mblbtns a{
+                display: block;
+                text-decoration: none;
+                padding: 15px 16px;
+                font-weight: bold;
+                color: white;
+            }
+            .mblbtns a:hover{
+                background-color: rgb(224, 156, 245);;
+                border-bottom: 3px solid #FBBE04;
+            }
+            .banner{
+                padding-top: 50px;
+                height: 200px;
+                display: flex;
+                align-content: center;
+                grid-template-rows: repeat(4,1fr);
+            }
+            #bigtext{
+                font-size: 50px;
+                font-weight: bold;
+            }
+            .banner p{
+                font-size: 12px;
+                color: white;
+            }
+            #comp1{
+              padding-top: 70px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              
+            }
+            #comp1 img{
+              background-color: lightgray;
+              margin-inline: 200px;
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            #comp1 .maintxt{
+            font-size: 16px;
+            text-align: center;
+            width: 500px;
+            }
+            .comp2{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            .comp2 img{
+              background-color: lightgray;
+             
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            .comp2 .maintxt{
+              text-align: center;
+              font-size: 20px;
+              width: 500px;
+            }
+            #infos  {
+            padding: 20px 30px;
+            grid-column: 1/13;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inputcontainers{
+            grid-column: 1/13;
+            grid-row: 2/3;
+            background-image: url("Image/purple\ and\ orange\ bg.png");
+            background-size: cover;
+            border-radius: 12px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 20px;
+        }
+        .inputcontainers p{
+            font-size: 14px;
+        }
+        .inputcontainers input{
+            margin-bottom: 20px;
+        }
+        .inputbtn{
+            padding: 10;
+            display: flex;
+            justify-content: center;
+        }
+        .inputbtn a{
+            background-color: dodgerblue;
+            padding: 10px 20px;
+            align-self: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 12px;
+        }
+        .textcontainers{
+            grid-column: 1/13;
+            padding-left: 50px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .titletext{
+            grid-column: 1/13;
+            display: flex;
+            font-size: 20px;
+        }
+
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navwrap">
+        <header>
+            <nav>
+                <div class="logo"><a href="Main Page.html"><img style="width: 100px;" src="Image/gdsclogo.png" alt=""></a></div>
+                  <div class="btncontainers">
+                      <ul class="navigation-links">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html">Updates </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a style="border-bottom: 3px solid #FBBE04;" href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </ul>
+                      <button><img style="width: 40px;" src="Image/icons8-menu-50(1).png" alt=""></button>
+                      <div class="mblbtns">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html"> Activities </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="WHAT_WE_DO.html">Activities </a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </div>
+                  </div>
+              </nav>
+            <div class="banner">
+                <p>
+                    <font id="bigtext">Contact Us</font>
+                </p>
+            </div>
+        </header>
+
+
+        <div id="infos">
+            <div class="textbox"> <br>
+                <img src="Image/icons8-email-96.png" alt="">
+                <h3>Email</h3>
+                <p>Leave us an email at at:<br>
+                <b>gdscue@gmail.com</b></p>
+            </div>
+            <div class="textbox"> <br>
+                <img src="Image/icons8-phone-96.png" alt="">
+                <h3>Landline</h3>
+                <p>Kindly contact us at:<br>
+                <b>433-2774</b></p>
+            </div>
+            <div class="textbox"> <br> <br>
+                <img src="Image/icons8-address-96.png" alt="">
+                <h3>Address</h3>
+                <p>Visit us:<br>
+                <b> 2219 Recto Ave, Sampaloc, <br> Metro Manila</b></p>
+            </div>
+        </div>
+
+        <div class="titletext">
+            <h1>JOIN OUR NEWSLETTER:</h1>
+        </div>
+
+        <div class="content">
+            <div class="inputcontainers">
+                <small><b>Name:</b><font style="color: red;">*</font></small> <br>
+                <input type="text">
+                <small><b>Address:</b><font style="color: red;">*</font></small><br>
+                <input type="text">
+                <small><b>Message:</b><font style="color: red;">*</font></small><br>
+                <input style="height: 300px;" type="text">
+                <p>
+                    <b>We will handle your contact details in line with our <a href="PrivacyPolicy.html" style="color: #FBBE04; text-decoration: none;">Privacy policy</a>. If you prefer not to receive marketing emails from us, you can opt-out of all marketing communications or customize your preferences here.</b>
+                </p>
+                <div class="inputbtn">
+                    <a href="/">Submit</a>
+                </div>  
+            </div>
+            <div class="textcontainers">
+                <h1 style="font-size: 42px;">Speak with an officer</h1>
+                <p>Have a question, comment, or just want to say hello? We'd love to hear from you! <br> <br> Our team is always available to provide support, answer any questions you may have, or just chat about the latest trends in our industry. <br> <br>  Don't hesitate to reach out to us - we're here to help and can't wait to hear from you</p>
+            </div>
+        </div>
+     
+
+        <div class="footer">
+            <h2>&copy; 2024 Google Development Club. All rights reserved.</h2>
+        </div>
+        
+    </div>
+</body>
+</html>

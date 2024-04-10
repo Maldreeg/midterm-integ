@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> LATEST UPDATES </title>
+    <style>
+        .container{
+            margin: 0;
+            font-family: monospace;
+        }
+        .navwrap{
+            background-color: rgb(242, 255, 251);
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-gap: 5px;
+            color:rgb(0, 0, 0);
+            align-items: center;
+        }
+        header{
+            grid-column: 1/13;
+            background-image: url("Image/bg.jpg");
+            background-size: cover;
+        }
+        .logo{
+            position: fixed;
+            margin: 16px 36px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: #520d72;
+            z-index: 100;
+        }
+
+        nav button{
+            display: none;
+        }
+        .mblbtns{
+            display: none;
+        }
+        nav ul{
+            list-style: none;
+            overflow: hidden;
+            padding-right: 10px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        nav ul li{
+            display: flex;
+            height: 50px;
+            padding-left: 5px;
+            margin: 0;
+            align-items: center;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 15px 16px;
+            font-weight: bold;
+            color: white;
+            
+        }
+        nav ul li a:hover{
+            background-color: rgb(224, 156, 245);;
+            border-bottom: 3px solid #FBBE04;
+            
+        }
+        .banner{
+            padding-top: 50px;
+            height: 520px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+        #bigtext{
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .banner p{
+            grid-column: 2/4;
+            font-size: 20px;
+            color: white;
+        }
+        .banner a{
+            grid-column: 2/4;
+            text-decoration: none;
+            background-color: #230d61;
+            display: flex;
+            align-self: center;
+            justify-self: flex-start;
+            padding: 20px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 16px;
+            color: white;
+        }
+        .banner a:hover{
+            background-color: rgb(45, 177, 76);
+        }
+        #titletext{
+            margin-top:50px;
+            grid-column: 1/13;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            font-size: 26px;
+            padding-top: 10px;
+            text-align: center;
+            color: #460464;
+            letter-spacing: 2px;
+        }
+        .content{
+            grid-column: 2/12;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .textcont{
+            padding: 10px 25px;
+            width: 50%;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .textcont img{
+            position: absolute;
+            width: 40px;
+            border-radius: 50%;
+            right: -20px;
+            top: 32px;
+            z-index: 10;
+        }
+        .textbox{
+            
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .leftside{
+            align-self: flex-start;
+            border-right: 8px solid #5a0581;
+            margin-left: 4px;
+            background-image: url("Image/omb.png");
+            color: white;
+        }
+        .rightside{
+            align-self: flex-end;
+            border-left: 8px solid #5a0581;
+            margin-right: 4px;
+            background-image: url("Image/Rectangle\ 45.png");
+            background-size: cover;
+        }
+        .rightside img{
+            left: -24px;
+        }
+        .leftside img{
+            right: -24px;
+        }
+        .footer{
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #460464;
+            color: white;
+        }
+        @media screen and (max-width: 600px){
+            .btncontainers{
+                display: flex;
+                flex-direction: column;
+            }
+            nav ul{
+                display: none;
+            }
+            nav button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                padding: 10px 15px;
+                align-self: flex-end;
+                margin-right: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .mblbtns{
+                display: none;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                font-family: monospace;
+            }
+            .btncontainers:hover .mblbtns{
+                display: block;
+            }
+            .mblbtns a{
+                display: block;
+                text-decoration: none;
+                padding: 15px 16px;
+                font-weight: bold;
+                color: white;
+            }
+            .mblbtns a:hover{
+                background-color: rgb(224, 156, 245);;
+                border-bottom: 3px solid #FBBE04;
+            }
+            .banner{
+                padding-top: 50px;
+                height: 300px;
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                grid-template-rows: repeat(4,1fr);
+            }
+            #bigtext{
+                font-size: 26px;
+                font-weight: bold;
+            }
+            .banner p{
+                grid-column: 2/4;
+                font-size: 12px;
+                color: white;
+            }
+            .banner a{
+                grid-column: 2/4;
+                text-decoration: none;
+                background-color: #3595c2;
+                display: flex;
+                align-self: center;
+                justify-self: flex-start;
+                padding: 10px 10px;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 12px;
+                color: white;
+            }
+            #comp1{
+              padding-top: 70px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              
+            }
+            #comp1 img{
+              background-color: lightgray;
+              margin-inline: 200px;
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            #comp1 .maintxt{
+            font-size: 16px;
+            text-align: center;
+            width: 500px;
+            }
+            .comp2{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            .comp2 img{
+              background-color: lightgray;
+             
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            .comp2 .maintxt{
+              text-align: center;
+              font-size: 20px;
+              width: 500px;
+            }
+            
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navwrap">
+        <header>
+            <nav>
+                <div class="logo"><a href="Main Page.html"><img style="width: 100px;" src="Image/gdsclogo.png" alt=""></a></div>
+                  <div class="btncontainers">
+                      <ul class="navigation-links">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a style="border-bottom: 3px solid #FBBE04;" href="UPDATES.html">Updates </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </ul>
+                      <button><img style="width: 40px;" src="Image/icons8-menu-50(1).png" alt=""></button>
+                      <div class="mblbtns">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html"> Activities </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="WHAT_WE_DO.html">Activities </a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </div>
+                  </div>
+              </nav>
+            
+            <div class="banner">
+                <p>
+                    <font id="bigtext"> HERE'S TO OUR LATEST ACTIVITIES </font><br><br>
+                    Stay up-to-date with the latest news and events from our organization. 
+                </p>
+                <br>
+                <a href="#titletext"> Check our activities </a>
+                
+            </div>
+        </header>
+
+
+        <div id="titletext">
+            <p>
+                <BR> <BR> 
+                    <B>  STAY TUNED FOR OUR UPCOMING ACTIVITIES: </B>
+                    <BR> <BR> 
+                    <img src="Image/event4.jpg" alt="" height="900" width="900"   > <br> <br> <br>
+                    <img src="Image/event1.jpg" alt="" height="900" width="900" > <br> <br> <br>
+                    <img src="Image/event5.jpg" alt="" height="900" width="900" > <br> <br> <br> <br> <br> <br>
+                <font style="font-size: 60px; font-weight: bold;"> &nbsp; SEE OUR RECENT UPDATES & ACTIVITIES </font> <BR> 
+                Catch up with us! Here are our most recent journey and accomplishments. <br> <br> <br> <br>
+            </p> 
+
+            
+        </div>
+
+
+        <div class="content">
+            <div class="textcont leftside">
+                <div class="textbox">
+                    
+                    <h2>
+                    DATACAMP SKILLS SCHOLARS
+                    </h2>
+                    <small> April 1st </small>
+                    <p>
+                    These folks aren't fooling around with their DataCamp skills! A big round of applause to our amazing Top <br>Scholars this April! 👏 <br>
+                    <br> <br> Show Love to our Top 3 scholars 🏆🏆🏆: <br> <br>
+                    <li> Miriam Bolima - 201,583 XP <br> </li>
+                    <li> Victor Claveria - 194,491 XP <br> </li>
+                    <li> Cris Camacho - 175,571 XP <br> <br> </li>
+
+                    Keep exploring the exciting world of data with DataCamp! We'll catch you next time for the leaderboard update. 🚀👨🏻‍💻
+                    </p>
+                    
+                </div>
+            </div>
+
+            <div class="textcont rightside">
+                
+                
+                <div class="textbox">
+                    <p>
+                        <h2>
+                            EXPLORATION WITH FIGMA
+                        </h2>
+                        <small> March 21 </small>
+                        <p>
+                            ✨ Design the Future with UI/UX! 🎨✨
+                            Explore the world of user-centered design, discover Figma’s magic with creativity, and unravel the secrets of wireframing and prototyping. 
+                            ⏰ Time: 6:00 PM - 8:00 PM
+                            <BR> <BR>
+                            Register Here:
+                            https://bit.ly/ExplorationWithFigma
+                        </p>
+                      
+                       
+                    
+                    
+                </div>
+            </div>
+
+            <div class="textcont leftside">
+                
+                <img src="event4.jpg" alt="">
+                <div class="textbox">
+                    <h2>
+                        Web Echoes - The Pulse of React.js and Next.js
+                    </h2>
+                    <small> March 12 </small>
+                    <p>
+                        𝕴𝖙’𝖘 𝖙𝖍𝖊 “𝖂𝖊𝖇 𝕰𝖈𝖍𝖔𝖊𝖘: 𝕿𝖍𝖊 𝕻𝖚𝖑𝖘𝖊 𝖔𝖋 𝕽𝖊𝖆𝖈𝖙.𝖏𝖘 𝖆𝖓𝖉 𝕹𝖊𝖝𝖙.𝖏𝖘!” 🔊 <br> <br>
+Listen closely as the rhythmic beats echo on March 17, 2024! Immerse yourself in the dynamic cadence of React.js and Next.js <br> <br> <br> with the Google Developer Student Club - UE Caloocan, experiencing the vitality of these on-demand frameworks for web development, all at no cost! 💻🚀
+<br> <br> The workshop will take place on Google Meet. From 1 PM to 5 PM. <br> <br> Registration form below: <br> <br>
+https://bit.ly/3UYnlFz
+                    </p>
+                </div>
+            </div>
+
+            <div class="textcont rightside">
+               
+                <div class="textbox" >
+                    
+                    <h2>
+                        FREE CODING BOOTCAMP 
+                    </h2>
+                    <small> February 12 </small>
+                    <p>
+                        We will teach you the basics in our Free Coding Bootcamp! <BR>
+                        <br>  🗓 Save the date: February 24, 2024 (Saturday) 1 PM - 6:30 PM PHT <br> 
+🙋 Register here: <br> <br> https://codenow.zuitt.co/FCBFeb24Register  <br>  <br> Registration will close on February 23, 2024 (Friday)
+hSDJHS
+                    </p>
+                </div> 
+            </div>
+       
+         
+        </div>
+
+        <div class="footer">
+            <i> <h3> &copy; 2024 Google Development Club. All rights reserved.</h3> </i>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Developers Page</title>
+    <style>
+        .container{
+            margin: 0;
+            font-family: monospace;
+            
+        }
+        .navwrap{
+            background-image: url("Image/devpage.jpg");
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-gap: 5px;
+        }
+        header{
+            grid-column: 1/13;
+            background-image: url("Image/Banner.png");
+            background-size: cover;
+        }
+        .logo{
+            position: fixed;
+            margin: 16px 36px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: #520d72;
+            z-index: 100;
+        }
+        nav button{
+            display: none;
+        }
+        .mblbtns{
+            display: none;
+        }s
+        .nav-scroll {
+            background-color: #333;
+        }
+        nav ul{
+            list-style: none;
+            overflow: hidden;
+            padding-right: 10px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        nav ul li{
+            display: flex;
+            height: 50px;
+            padding-left: 5px;
+            margin: 0;
+            align-items: center;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 15px 16px;
+            font-weight: bold;
+            color: white;
+            
+        }
+        nav ul li a:hover{
+            background-color: rgb(224, 156, 245);;
+            border-bottom: 3px solid #DA7E1A;
+            
+            
+        }
+        .banner{
+            padding-top: 50px;
+            height: 520px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+        .banner p{
+            grid-column: 2/4;
+            font-size: 25px;
+            color: white;
+        }
+        .banner a{
+            grid-column: 2/4;
+            text-decoration: none;
+            background-color: #35c251;
+            display: flex;
+            align-self: center;
+            justify-self: flex-start;
+            padding: 20px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 16px;
+            color: white;
+        }
+        
+        #titletext{
+            margin-top:75px;
+            grid-column: 1/13;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+        }
+        .content{
+            grid-column: 2/12;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .card{
+            margin-inline: 40px;
+            transform-style: preserve-3d;
+            height: 350px;
+            width: 300px;
+            transition:all .8s ease;
+        }
+        .card:hover{
+            transform: rotateY(180deg);
+        }
+        .front{
+            position: absolute;
+            background-image: url("Image/ombre1.jpg");
+            backface-visibility: hidden;
+            border: 6px solid #ca70ee;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 20px;
+            height: 100%;
+            color: white;
+        }
+        .front img{
+            height: 200px;
+            width: 200px;
+            border-radius: 12px;
+        }
+        .back{
+            position: absolute;
+            backface-visibility: hidden;
+            border: 6px solid #c04ef53b;
+            background-image: url("Image/purple\ and\ orange\ bg.png");
+            background-size: cover;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 20px;
+            transform: rotateY(180deg);
+            color: white;
+            font-weight: bold;
+            height: 100%;
+        }
+        .back img{
+            width: 200px;
+            border-radius: 12px
+        }
+        .footer{
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #8A0EC4;
+            color: white;
+            margin-top: 50px;
+        }
+        @media screen and (max-width: 600px){
+            .btncontainers{
+                display: flex;
+                flex-direction: column;
+            }
+            nav ul{
+                display: none;
+            }
+            nav button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                padding: 10px 15px;
+                align-self: flex-end;
+                margin-right: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .mblbtns{
+                display: none;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                font-family: monospace;
+            }
+            .btncontainers:hover .mblbtns{
+                display: block;
+            }
+            .mblbtns a{
+                display: block;
+                text-decoration: none;
+                padding: 15px 16px;
+                font-weight: bold;
+                color: white;
+            }
+            .mblbtns a:hover{
+                background-color: rgb(224, 156, 245);;
+                border-bottom: 3px solid #FBBE04;
+            }
+            .banner{
+                padding-top: 50px;
+                height: 200px;
+                display: flex;
+                align-content: center;
+                grid-template-rows: repeat(4,1fr);
+            }
+            #bigtext{
+                font-size: 50px;
+                font-weight: bold;
+            }
+            .banner p{
+                font-size: 12px;
+                color: white;
+            }
+            #comp1{
+              padding-top: 70px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              
+            }
+            #comp1 img{
+              background-color: lightgray;
+              margin-inline: 200px;
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            #comp1 .maintxt{
+            font-size: 16px;
+            text-align: center;
+            width: 500px;
+            }
+            .comp2{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            .comp2 img{
+              background-color: lightgray;
+             
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            .comp2 .maintxt{
+              text-align: center;
+              font-size: 20px;
+              width: 500px;
+            }
+            #infos  {
+            padding: 20px 30px;
+            grid-column: 1/13;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inputcontainers{
+            grid-column: 1/13;
+            grid-row: 2/3;
+            background-image: url("Image/purple\ and\ orange\ bg.png");
+            background-size: cover;
+            border-radius: 12px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 20px;
+        }
+        .inputcontainers p{
+            font-size: 14px;
+        }
+        .inputcontainers input{
+            margin-bottom: 20px;
+        }
+        .inputbtn{
+            padding: 10;
+            display: flex;
+            justify-content: center;
+        }
+        .inputbtn a{
+            background-color: dodgerblue;
+            padding: 10px 20px;
+            align-self: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 12px;
+        }
+        .textcontainers{
+            grid-column: 1/13;
+            padding-left: 50px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .titletext{
+            grid-column: 1/13;
+            display: flex;
+            font-size: 20px;
+        }
+
+        }
+      
+    </style>
+</head>
+<body class="container">
+    <div class="navwrap">
+        <header>
+            <nav>
+                <div class="logo"><a href="Main Page.html"><img style="width: 100px;" src="Image/gdsclogo.png" alt=""></a></div>
+                  <div class="btncontainers">
+                      <ul class="navigation-links">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html">Updates </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a style="border-bottom: 3px solid #FBBE04;" href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </ul>
+                      <button><img style="width: 40px;" src="Image/icons8-menu-50(1).png" alt=""></button>
+                      <div class="mblbtns">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html"> Activities </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="WHAT_WE_DO.html">Activities </a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </div>
+                  </div>
+              </nav>
+        </header>
+
+
+        <div id="titletext">
+            <h1>MEET THE DEVELOPERS</h1>
+        </div>
+
+
+        <div class="content">
+            
+            <div class="card">
+                <div class="front">
+                    <img src="Image/dev1.jpg" alt="">
+                    <h2> John Chua</h2>
+                    <UL>
+                        <LI> Inspiration for Splash Page </LI>
+                        <LI> Designed the About Page </LI>
+
+                    </UL>
+                </div>
+                <div class="back">
+                    <img src="Image/dev11.jpg" alt="">
+                    <h2> Chua's Quote </h2>
+                    <p>"The best error message is the one that never shows up." </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="Image/dev2.jpg" alt="">
+                    <h2> Allen Dave Macaspac</h2>
+                    <UL>
+                   <li> UI/UX LEAD DESIGNER </li> 
+                    <li> PROJECT MANAGER </li>
+                    <li> ANIMATION DIRECTOR </li>
+                    <li> LAYOUTS DESIGNER </li>
+                </UL>
+                </div>
+                <div class="back">
+                    <img src="Image/1x1.png" alt="">
+                    <h2> Allen's Quote </h2>
+                    <p>"Code is like humor. When you have to explain it, it’s bad." </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="Image/dev3.jpg">
+                    <h2> Isabel Lopez</h2>
+                    <UL>
+                    <li> ASSOCIATE UI/UX LEAD DESIGNER </li>
+                    <li> OVERSEES UNIFORMITY AMONG ALL PAGES </li>
+                    <li> GATHERED AND CONNECTED ALL PAGES FROM MEMBERS </li>
+                </UL>
+                   
+
+                </div>
+                <div class="back">
+                    <img src="Image/dev33.jpg" alt="">
+                    <h2> Isabel's Quote </h2>
+                    <p>"The art of programming is the skill of controlling complexity."
+                        
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="footer">
+            <h2>&copy; 2024 Google Development Club. All rights reserved.</h2>
+        </div>
+    </div>
+            
+       
+</body>
+</html>

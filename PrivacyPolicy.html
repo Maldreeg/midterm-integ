@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy</title>
+    <style>
+        
+        .container{
+            margin: 0;
+            font-family: monospace;
+        }
+        .navwrap{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-gap: 5px;
+        }
+        header{
+            grid-column: 1/13;
+            background-image: url("Image/Banner.png");
+            background-size: cover;
+        }
+        .logo{
+            position: fixed;
+            margin: 16px 36px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: #520d72;
+            z-index: 100;
+        }
+
+        nav button{
+            display: none;
+        }
+        .mblbtns{
+            display: none;
+        }
+        nav ul{
+            list-style: none;
+            overflow: hidden;
+            padding-right: 10px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        nav ul li{
+            display: flex;
+            height: 50px;
+            padding-left: 5px;
+            margin: 0;
+            align-items: center;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 15px 16px;
+            font-weight: bold;
+            color: white;
+            
+        }
+        nav ul li a:hover{
+            background-color: rgb(224, 156, 245);;
+            border-bottom: 3px solid #FBBE04;
+            
+        }
+        #titletext{
+            padding-top: 20px;
+            grid-column: 1/13;
+            display: flex;
+            font-size: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content{
+            grid-column: 1/13;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .expire{
+            align-items: center;
+            margin-inline: 200px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #494949;
+        }
+        #comp1{
+          padding-top: 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-inline: 200px;
+        }
+        #comp1 img{
+          background-color: lightgray;
+          width: 300px;
+          height: 300px;
+          margin-right: 20px;
+          border-radius: 16px;
+          border: 6px solid #8A0EC4;
+          box-shadow: 5px 5px 10px #aa20ebab;
+        }
+        #comp1 .maintxt{
+         font-size: 24px;
+        }
+        .maintxt p{
+            color: rgb(75, 75, 75);
+            font-size: 18px;
+        }
+        .maintxt li{
+            color: rgb(75, 75, 75);
+            font-size: 18px;
+            margin-left: 50px;
+        }
+
+        .footer{
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #8A0EC4;
+            color: white;
+        }
+        @media screen and (max-width: 600px){
+            .btncontainers{
+                display: flex;
+                flex-direction: column;
+            }
+            nav ul{
+                display: none;
+            }
+            nav button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                padding: 10px 15px;
+                align-self: flex-end;
+                margin-right: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .mblbtns{
+                display: none;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                font-family: monospace;
+            }
+            .btncontainers:hover .mblbtns{
+                display: block;
+            }
+            .mblbtns a{
+                display: block;
+                text-decoration: none;
+                padding: 15px 16px;
+                font-weight: bold;
+                color: white;
+            }
+            .mblbtns a:hover{
+                background-color: rgb(224, 156, 245);;
+                border-bottom: 3px solid #FBBE04;
+            }
+            .content{
+                grid-column: 1/13;
+            }
+            #comp1{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-inline: 20px;
+            }
+            
+            #comp1 .maintxt{
+            font-size: 16px;
+            }
+            .expire{
+            align-items: center;
+            margin-inline: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #494949;
+        }
+            
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navwrap">
+        <header>
+            <nav>
+                <div class="logo"><a href="Main Page.html"><img style="width: 100px;" src="Image/gdsclogo.png" alt=""></a></div>
+                  <div class="btncontainers">
+                      <ul class="navigation-links">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html">Updates </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a style="border-bottom: 3px solid #FBBE04;" href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </ul>
+                      <button><img style="width: 40px;" src="Image/icons8-menu-50(1).png" alt=""></button>
+                      <div class="mblbtns">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html"> Activities </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="WHAT_WE_DO.html">Activities </a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </div>
+                  </div>
+              </nav>   
+        </header>
+
+        <div id="titletext">
+            <h1>GDSC's Privacy Policy</h1>
+        </div>
+
+        
+
+        <div class="content">
+            <div class="expire">
+                <p>Effective as of April 10, 2024, Google Development Students Clubs . and its affiliates (collectively, "GDSC", "we", "us", or "our") have updated our Privacy Policy.</p>
+            </div>
+        
+            <div id="comp1">
+                <div class="maintxt">
+                    <h1>1. Introduction</h1>
+                    <h3>What's this policy about?</h3>
+                    <p>This privacy policy outlines how our club collects, uses, and protects any information that you provide to us when you use our website or participate in our activities.</p>
+
+                    <h3>What information do we collect?</h3>
+                    <p>We may collect the following information:</p>
+                        <li>Name</li>
+                        <li>Contact information, including email address</li>
+                        <li>Demographic information, such as age, gender, and interests</li>
+                        <li>Other information relevant to surveys and/or offers</li>
+
+                    <h3>How do we collect your information?</h3>
+                    <p>We may collect this information in several ways, including:</p>
+                        <li>When you fill out a form on our website</li>
+                        <li>When you register for an event or activity</li>
+                        <li>When you participate in a survey or provide feedback</li>
+
+                    <h3>How do we use your information?</h3>
+                    <p>We use this information to understand your needs and provide you with better service, and in particular for the following reasons:</p>
+                        <li>To improve our website and services</li>
+                        <li>To send you promotional emails about new events, special offers, or other information which we think you may find interesting</li>
+                        <li>To contact you for market research purposes</li>
+
+                    <h1>2. Security</h1>
+                    <p>We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic, and managerial procedures to safeguard and secure the information we collect online.</p>
+
+                    <h1>3. Policy changes</h1>
+                    <p>We may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes.</p>
+
+                    <p>If you have any questions or concerns about our privacy policy, please contact us at <b><i>fakegdscemail@gmail.com</i></b></p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="footer">
+            <h2>&copy; 2024 Google Development Club. All rights reserved.</h2>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

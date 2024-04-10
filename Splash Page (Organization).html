@@ -1,0 +1,89 @@
+</DOCTYPE html>
+<html>
+<head>
+    <title>WELCOME </title>
+    <style>
+     body{
+      background-image: url("Image/purple\ and\ orange\ bg.png");
+      background-size: cover;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      font-family: monospace;
+     }
+     #content{
+      grid-column: 1;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      
+     }
+     .texts{
+      padding: 70px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-size: 20px;
+      text-shadow: 5px 5px 10px rgba(71, 71, 71, 0.3);
+     }
+     .texts h1{
+      font-size: 75px;
+      font-weight: bold;
+      margin: 0;
+     }
+     .texts p{
+      margin: 0;
+     }
+     #img{
+      grid-column: 2;
+      height: 100%;
+      background-image: url("Image/gdscfront.jpg");
+      background-size: cover;
+      height: 100vh;
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+      animation: slidebg 10s linear infinite alternate;
+     }
+     .line{
+      height: 5px;
+      background-color: dodgerblue;
+      border-radius: 20px;
+      margin-bottom: 20px;
+     }
+     .texts a{
+      align-self: center;
+      justify-self: center;
+      padding: 25px 60px;
+      background-color: #35c251;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+     }
+     .texts a:hover{
+      background-color: #268f3b;
+     }
+     @keyframes slidebg {
+        0% { background-position: 0 0; }
+        100% { background-position: 100% 0; }
+      }
+    </style>
+</head>
+<body>
+    <div id="content">
+      <div class="texts">
+        <h1>WELCOME</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, facilis.</p>
+        <ul>
+          <li>Allen Dave Macaspac</li>
+          <li>Isabel Joy Lopez</li>
+          <li>John Chua</li>
+        </ul>
+        <div class="line"></div>
+        <a href="Main Page.html">START</a>
+      </div> 
+    </div>
+    <div id="img"></div>
+</body>
+</html>

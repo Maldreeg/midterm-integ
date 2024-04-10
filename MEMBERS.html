@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> OUR MEMBERS </title>
+    <style>
+        .container{
+            margin: 0;
+            font-family: monospace;
+            background-image: url("Image/bg.jpg");
+            background-size: cover;
+            
+        }
+        .navwrap{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-gap: 5px;
+        }
+        header{
+            grid-column: 1/13;
+            background-image: url("Image/bg.jpg");
+            background-size: cover;
+        }
+        .logo{
+            position: fixed;
+            margin: 16px 36px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: #520d72;
+            z-index: 100;
+        }
+
+        nav button{
+            display: none;
+        }
+        .mblbtns{
+            display: none;
+        }
+        nav ul{
+            list-style: none;
+            overflow: hidden;
+            padding-right: 10px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        nav ul li{
+            display: flex;
+            height: 50px;
+            padding-left: 5px;
+            margin: 0;
+            align-items: center;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 15px 16px;
+            font-weight: bold;
+            color: white;
+            
+        }
+        nav ul li a:hover{
+            background-color: rgb(224, 156, 245);;
+            border-bottom: 3px solid #FBBE04;
+            
+        }
+        .banner{
+            padding-top: 50px;
+            height: 520px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+        .banner p{
+            grid-column: 2/4;
+            font-size: 25px;
+            color: white;
+        }
+        .banner a{
+            grid-column: 2/4;
+            text-decoration: none;
+            background-color: #35c251;
+            display: flex;
+            align-self: center;
+            justify-self: flex-start;
+            padding: 20px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 16px;
+            color: white;
+        }
+        .banner a:hover{
+            background-color: rgb(45, 177, 76);
+        }
+        #titletext{
+            margin-top:75px;
+            grid-column: 1/13;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            font-size: 26px;
+            background-image: url("Image/omb.png");
+            color: white;
+        }
+        #bodytext{
+            margin-top:75px;
+            grid-column: 1/13;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+        #body2text{
+            margin-top:75px;
+            grid-column: 1/13;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+        #body3text{
+            margin-top:75px;
+            grid-column: 1/13;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+        .content{
+            grid-column: 2/12;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card{
+            margin-inline: 40px;
+            transform-style: preserve-3d;
+            height: 350px;
+            width: 300px;
+            transition:all .8s ease;
+        }
+        .card:hover{
+            transform: rotateY(180deg);
+        }
+        .front{
+            position: absolute;
+            color: white;
+            background-color: rgb(72, 4, 150);
+            backface-visibility: hidden;
+            border: 6px solid #d988ff;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 20px;
+            height: 100%;
+        }
+        .front img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .back{
+            position: absolute;
+            backface-visibility: hidden;
+            border: 6px solid #c04ef53b;
+            background-image: url("Image/purple\ and\ orange\ bg.png");
+            background-size: cover;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 20px;
+            transform: rotateY(180deg);
+            color: white;
+            font-weight: bold;
+            height: 100%;
+            text-align: center;
+            text-size-adjust: 10px;
+        }
+        .back img{
+            width: 200px;
+        }
+        .btns img{
+            height: 20px;
+            width: 20px;
+        }
+        .footer{
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #520d72;
+            color: white;
+            margin-top: 50px;
+        }
+        @media screen and (max-width: 600px){
+            .btncontainers{
+                display: flex;
+                flex-direction: column;
+            }
+            nav ul{
+                display: none;
+            }
+            nav button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                padding: 10px 15px;
+                align-self: flex-end;
+                margin-right: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .mblbtns{
+                display: none;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                font-family: monospace;
+            }
+            .btncontainers:hover .mblbtns{
+                display: block;
+            }
+            .mblbtns a{
+                display: block;
+                text-decoration: none;
+                padding: 15px 16px;
+                font-weight: bold;
+                color: white;
+            }
+            .mblbtns a:hover{
+                background-color: rgb(224, 156, 245);;
+                border-bottom: 3px solid #FBBE04;
+            }
+            .banner{
+                padding-top: 50px;
+                height: 300px;
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                grid-template-rows: repeat(4,1fr);
+            }
+            #bigtext{
+                font-size: 26px;
+                font-weight: bold;
+            }
+            .banner p{
+                grid-column: 2/4;
+                font-size: 12px;
+                color: white;
+            }
+            .banner a{
+                grid-column: 2/4;
+                text-decoration: none;
+                background-color: #3595c2;
+                display: flex;
+                align-self: center;
+                justify-self: flex-start;
+                padding: 10px 10px;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 12px;
+                color: white;
+            }
+            #comp1{
+              padding-top: 70px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              
+            }
+            #comp1 img{
+              background-color: lightgray;
+              margin-inline: 200px;
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            #comp1 .maintxt{
+            font-size: 16px;
+            text-align: center;
+            width: 500px;
+            }
+            .comp2{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            .comp2 img{
+              background-color: lightgray;
+             
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            .comp2 .maintxt{
+              text-align: center;
+              font-size: 20px;
+              width: 500px;
+            }
+            
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navwrap">
+        <header>
+            <nav>
+                <div class="logo"><a href="Main Page.html"><img style="width: 100px;" src="Image/gdsclogo.png" alt=""></a></div>
+                  <div class="btncontainers">
+                      <ul class="navigation-links">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html">Updates </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a style="border-bottom: 3px solid #FBBE04;" href="MEMBERS.html">Members</a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </ul>
+                      <button><img style="width: 40px;" src="Image/icons8-menu-50(1).png" alt=""></button>
+                      <div class="mblbtns">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html"> Activities </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="WHAT_WE_DO.html">Activities </a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </div>
+                  </div>
+              </nav>
+        </header>
+
+
+        <div id="titletext">
+            <h1> MEET THE OPERATIONS TEAM </h1>
+        </div>
+
+
+        <div class="content">
+            
+            <div class="card">
+                <div class="front">
+                    
+                    <h2> Emmanuel Forfieda </h2> <br> <br>
+                    <img src="Image/op1.jpg" alt="">
+                </div>
+                <div class="back">
+                    <img src="Image/op11.jpg" alt="">
+                    <h2> Chief Executive Officer </h2>
+                 
+                    <p> "Success is not final, failure is not fatal: <br> <br>  It is the courage to continue that counts.""</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    
+                    <h2> Angela Samboa </h2> <br> <br>
+                    <img src="Image/op2.jpg" alt=""> 
+                </div>
+                <div class="back">
+                    <img src="Image/op22.jpg" alt="">
+                    <h2> CHIEFS OPERATIONS OFFICER  </h2>
+                    <p>"Believe you can and you're halfway there."</p>
+                </div>
+            </div>
+           
+                
+                
+            </div>
+
+        </div>
+            
+        <div id="titletext">
+            
+        </div>
+
+
+        <div class="content">
+            
+            <div class="card">
+                <div class="front">
+                    
+                    <h2>Alixhan Bustamante </h2>  
+                    <img src="Image/op3.jpg" alt="">
+                </div>
+                <div class="back">
+                    
+                    <h2> Secretary </h2>
+                    <p>"Your time is limited, don't waste it living someone else's life." </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    
+                    <h2>Isabel Lopez</h2>  <br> <br>
+                    <img src="Image/op4.jpg" alt="">
+                </div>
+                <div class="back">
+                    <img src="op44.jpg" alt="">
+                    <h2> Finance Lead </h2>
+                    <p>"The only limit to our realization of tomorrow will be <br> our doubts of today." </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    
+                    <h2> Kelcey Cruz </h2> <br> <br>
+                    <img src="Image/op5.jpg" alt="">
+            
+                </div>
+                <div class="back">
+                    <img src="op55.jpg" alt="">
+                    <h2> Partnership Lead </h2>
+                    <p>"The only way to do great work is to love what you do. <br> <br> If you haven’t found it yet, keep looking. <br> Don’t settle." </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="titletext">
+            <h1> DATA SCIENCE DEPARTMENT </h1>
+        </div>
+
+
+        <div class="content">
+            
+            <div class="card">
+                <div class="front">
+                    
+                    <h2> Aidan Delon Del Pilar </h2> <br> <br>
+                    <img src="Image/d11.jpg" alt="">
+            
+                </div>
+                <div class="back">
+                    <img src="op55.jpg" alt="">
+                    <h2> Data Science Lead </h2>
+                    <p>"Challenges are what make life interesting. <br> <br> Overcoming them is what makes life meaningful."  </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                   
+                    <h2> Aronn Marc Duran </h2> <br> <br>
+                    <img src="Image/d2s.jpg" alt="">
+        
+                </div>
+                <div class="back">
+                    <h2>Associate Data Science Lead</h2>
+                    <p>"The greatest glory in living lies not in never falling, <br>
+                        but in rising every time we fall." </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    
+                    <h2> Aus John Joshua </h2> <br> <br>
+                    <img src="Image/d3.jpg" alt="">
+                </div>
+                <div class="back">
+                    
+                    <h2>Associate Data Science Lead</h2>
+                    <p>"The future belongs to those who believe in the beauty of their dreams." </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="titletext">
+            <h1> UI/UX DEPARTMENT </h1>
+        </div>
+
+
+        <div class="content">
+            
+            <div class="card">
+                <div class="front">
+                    <h2>Anne Trisha </h2> <BR> <BR>
+                    <img src="Image/u1.jpg" alt="">
+                    
+                </div>
+                <div class="back">
+                    
+                    <h2> UI/UX LEAD </h2> <BR> <BR>
+                    <p>"Success is not the key to happiness. Happiness is the key to success. <br> <br> 
+                        If you love what you are doing, you will be successful." </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <h2> Justin Garcia </h2>
+                    <img src="Image/u2.jpg" alt="">
+                  
+                </div>
+                <div class="back">
+                   
+                    <h2> ASSOCIATE UI/UX LEAD </h2>
+                    <p>"Opportunities don't happen, you create them." </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <h2> Joshua Tang </h2>
+                    <img src="Image/u3.jpg" alt="">
+                    
+                   
+                </div>
+                <div class="back">
+                
+                    <h2> ASSOCIATE UI/UX LEAD </h2> 
+                    <p>"The only way to achieve the impossible is to believe it is possible." </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <h2>&copy; 2024 Google Development Club. All rights reserved.</h2>
+        </div>
+        
+    </div>
+</body>
+</html>

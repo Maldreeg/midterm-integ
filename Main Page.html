@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Page</title>
+    <style>
+        
+        .container{
+            margin: 0;
+            font-family: monospace;
+        }
+        .navwrap{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-gap: 5px;
+        }
+        header{
+            grid-column: 1/13;
+            background-image: url('wp3.jpg');
+            background-size: cover;
+            
+        }
+        .logo{
+            position: fixed;
+            margin: 16px 36px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        nav{
+            position: fixed;
+            width: 100%;
+            background-color: #460464;
+            z-index: 100;
+        }
+
+        nav button{
+            display: none;
+        }
+        .mblbtns{
+            display: none;
+        }
+        nav ul{
+            list-style: none;
+            overflow: hidden;
+            padding-right: 10px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        nav ul li{
+            display: flex;
+            height: 50px;
+            padding-left: 5px;
+            margin: 0;
+            align-items: center;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 15px 16px;
+            font-weight: bold;
+            color: white;
+            
+        }
+        nav ul li a:hover{
+            background-color: rgb(224, 156, 245);;
+            border-bottom: 3px solid #FBBE04;
+            
+        }
+        .banner{
+            padding-top: 50px;
+            height: 550px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(4,1fr);
+            background-image: url("Image/bg.jpg");
+            
+        }
+        #bigtext{
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .banner h1{
+            grid-column: 1/7;
+            grid-row: 2/3;
+            font-size: 75px;
+            color: white;
+            text-align: center;
+        }
+        .banner a{
+            grid-column: 3/5;
+            grid-row: 3/4;
+            text-decoration: none;
+            background-color: #520d72;
+            display: flex;
+            align-self: center;
+            justify-self: flex-start;
+            padding: 15px 70px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 16px;
+            color: white;
+            align-self: center;
+            justify-self: center;
+        }
+        .banner a:hover{
+            background-color: rgb(45, 177, 76);
+        }
+        #content{
+            grid-column: 1/13;
+            position: relative;
+            margin-inline: 100px;
+            margin-block: 50px;
+        }
+        .comp1{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+        .comp1 img{
+          background-color: lightgray;
+          width: 370px;
+          height: 370px;
+          margin-right: 20px;
+          border-radius: 16px;
+          border: 6px solid #8A0EC4;
+          box-shadow: 5px 5px 10px #aa20ebab;
+        }
+        .comp1 .maintxt{
+         font-size: 20px;
+        }
+
+        .content2{
+          grid-column: 1/13;
+          position: relative;
+          margin-block: 50px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+        .comp2{
+          width: 300px;
+          height: 450px;
+          border: 6px solid #8A0EC4;
+          box-shadow: 5px 5px 10px #aa20ebab;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 20px 30px;
+          border-radius: 16px;
+          font-size: 18px;
+          margin-inline: 20px;
+        }
+        
+        
+        .footer{
+            grid-column: 1/13;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #460464;
+            color: white;
+        }
+        @keyframes moveline{
+            0%{
+                height: 0;
+            }
+            100%{
+                height: 100%;
+            }
+        }
+        @keyframes fadein{
+            0% {
+                opacity: 0;
+             }
+            100% {
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .btncontainers{
+                display: flex;
+                flex-direction: column;
+            }
+            nav ul{
+                display: none;
+            }
+            nav button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                width: 50px;
+                padding: 10px 15px;
+                align-self: flex-end;
+                margin-right: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            .mblbtns{
+                display: none;
+                text-align: center;
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                font-family: monospace;
+            }
+            .btncontainers:hover .mblbtns{
+                display: block;
+            }
+            .mblbtns a{
+                display: block;
+                text-decoration: none;
+                padding: 15px 16px;
+                font-weight: bold;
+                color: white;
+            }
+            .mblbtns a:hover{
+                background-color: rgb(224, 156, 245);;
+                border-bottom: 3px solid #FBBE04;
+            }
+            .banner{
+                padding-top: 50px;
+                height: 250px;
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                grid-template-rows: repeat(4,1fr);
+            }
+            .banner h1{
+                grid-column: 1/7;
+                font-size: 55px;
+                font-weight: bold;
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .banner a{
+                display: none;
+            }
+            .comp1{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+            .comp1 img{
+              background-color: lightgray;
+              width: 300px;
+              height: 300px;
+              border-radius: 16px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+            }
+            .comp1 .maintxt{
+              font-size: 16px;
+              text-align: center;
+            }
+            .content2{
+              grid-column: 1/13;
+              position: relative;
+              margin-block: 25px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+            .comp2{
+              width: 300px;
+              height: 450px;
+              border: 6px solid #8A0EC4;
+              box-shadow: 5px 5px 10px #aa20ebab;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              padding: 20px 30px;
+              border-radius: 16px;
+              font-size: 18px;
+              margin-block: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="navwrap">
+        <header>
+            <nav>
+                <div class="logo"><a href="Main Page.html"><img style="width: 100px;" src="Image/gdsclogo.png" alt=""></a></div>
+                  <div class="btncontainers">
+                      <ul class="navigation-links">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html">Updates </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </ul>
+                      <button><img style="width: 40px;" src="Image/icons8-menu-50(1).png" alt=""></button>
+                      <div class="mblbtns">
+                        <li><a href="About.html">About Us </a></li>
+                        <li><a href="UPDATES.html"> Activities </a></li>
+                        <li><a href="OBJECTIVES.html"> Objectives </a></li>
+                        <li><a href="MEMBERS.html">Members</a></li>
+                        <li><a href="WHAT_WE_DO.html">Activities </a></li>
+                        <li><a href="NewsPage.html">News/Events </a></li>
+                        <li><a href="ContactPage.html">Contacts</a></li>
+                        <li><a href="DevelopersPage.html">Developers </a></li> &nbsp;
+                      </div>
+                  </div>
+              </nav>          
+            <div class="banner">
+                <h1>LEARN. COLLABORATE. INSPIRE.</h1>
+                <a href="#content">Learn More</a>
+            </div>
+        </header>
+
+
+
+        <div id="content">
+            <div class="comp1">
+              <img src="Image/gdsc.jpg" alt=""> 
+              <div class="maintxt">
+                <h1>Empowering students to shape the future of technology.</h1>
+                <p>Since its inception, GDSC has expanded globally, with chapters established in universities across different countries. <br> <br>  These chapters are led by student volunteers who organize events, workshops, and projects aimed at fostering learning and skill development in areas such as Android development, web development, machine learning, cloud computing, and more.</p>
+              </div>
+            </div>
+            
+            <div class="content2">
+              <div class="comp2">
+                <img src="Image/le.png" alt="">
+                <div class="maintxt">
+                  <h1>LEARN</h1>
+                  <p>We provide a dynamic platform where university students <br> can learn through hands-on workshops, expert-led sessions, and access to cutting-edge technologies.</p>
+                </div>
+              </div>
+              <div class="comp2">
+                <img src="Image/cr.png" alt="">
+                <div class="maintxt">
+                  <h1>COLLABORATE</h1>
+                  <p> Collaborate lies at the heart of our community, where students come together to share ideas, work on projects, and support each other's growth. </p>                
+                </div>
+              </div>
+              <div class="comp2">
+                <img src="Image/in.png" alt="">
+                <div class="maintxt">
+                  <h1>INSPIRE</h1>
+                  <p>Through this collaborative spirit, we Inspire one another to push boundaries, explore new technologies, and make a difference in the world. </p>                
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <h2>&copy; 2024 Google Development Club. All rights reserved.</h2>
+        </div>
+        
+    </div>
+</body>
+</html>
